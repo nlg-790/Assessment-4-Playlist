@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+  <h1>Song Details</h1>
+  <h2>ID: {{ song.id }}</h2>
+  <h2>Title: {{ song.title }}</h2>
+  <h2>Artist: {{ song.artist }}</h2>
+  {% if song.description %}
+    <p class="lead">{{ song.description }}</p>
+  {% endif %}
+</div>
+
+<ul>
+  {% for playlist in song.playlists %}
+    <li>{{ playlist.name }}</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
